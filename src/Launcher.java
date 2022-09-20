@@ -7,14 +7,15 @@ public class Launcher {
         Scanner scan = new Scanner(System.in); 
         String command = scan.nextLine();
         
-        if (command.equals("quit")){
-            scan.close();
-        } else {
+        while (!command.equals("quit")){
             System.out.println("Unknown command");
-            scan.close();
+            System.out.println("Bienvenue");            
+            command = scan.nextLine();
         }
         
-        
+        if (command.equals("quit")){
+                scan.close();
+        }
 
     }
 }
