@@ -26,9 +26,9 @@ public class Launcher {
         try {
         Scanner scan = new Scanner(System.in);
         String fichier = Files.readString(Path.of(scan.nextLine()));
-
+        String result = fichier.replaceAll("\\p{Punct}", "");
         List myList = new ArrayList();
-        myList = Arrays.asList(fichier.split(" "));
+        myList = Arrays.asList(result.split(" "));
         Map<String, Integer> total = new HashMap<>();
  
         List myList1 = new ArrayList();
