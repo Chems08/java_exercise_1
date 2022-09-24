@@ -19,7 +19,7 @@ public class Launcher {
         boolean leave;
 
         while (true){
-            resultat = scan.nextLine().toLowerCase();
+            resultat = scan.nextLine().toLowerCase().trim();
             leave = false;
             for(Command command : commands){
                 if(command.name().equalsIgnoreCase(resultat)){
