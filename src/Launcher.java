@@ -94,6 +94,7 @@ public class Launcher {
         while (!command.equals("quit")){
 
             if (command.equals("fibo")){
+                System.out.println("Entrez un nombre n:");
                 String n_string = scan.nextLine();
                 int n = Integer.parseInt(n_string);  
                 System.out.println(fibo(n));
