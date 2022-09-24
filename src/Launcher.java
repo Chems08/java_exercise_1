@@ -21,7 +21,7 @@ public class Launcher {
     }
         
 
-    public static List freq() {
+    public static String freq() {
         List<String> myList5 = new ArrayList<String>();
         try {
         Scanner scan = new Scanner(System.in);
@@ -80,7 +80,7 @@ public class Launcher {
 
         }
         
-        return myList5;
+        return String.join(" ", myList5);
     }
 
 
