@@ -26,9 +26,13 @@ public class Launcher {
         try {
         Scanner scan = new Scanner(System.in);
         String fichier = Files.readString(Path.of(scan.nextLine()));
-        String result = fichier.replaceAll("\\p{Punct}", "");
+
+        String result = fichier.toLowerCase().replaceAll("\\p{Punct}", "");
+        String test = result.trim().replaceAll(" +", " ");
+        String test2 = test.trim().replaceAll("\\n", " ");
+
         List myList = new ArrayList();
-        myList = Arrays.asList(result.split(" "));
+        myList = Arrays.asList(test2.split(" "));
         Map<String, Integer> total = new HashMap<>();
  
         List myList1 = new ArrayList();
@@ -53,7 +57,7 @@ public class Launcher {
         
         while (count<3){
             
-            if (myList3.get(i).toString().charAt(0) != '='){
+            if (myList3.get(i).toString().charAt(0) != '=' ){
                 myList4.add(myList3.get(i));
                 count+=1;
             }
@@ -72,7 +76,8 @@ public class Launcher {
 
 
         } catch (IOException e) {
-             System.out.println("Unreadable file: ");
+             System.out.println("Unreadable file: "+ e);
+
         }
         
         return myList5;
@@ -82,7 +87,7 @@ public class Launcher {
 
     public static void main(String[] args) { 
 
-        System.out.println("Bienvenue");
+        
         Scanner scan = new Scanner(System.in); 
         String command = scan.nextLine();
         
@@ -105,7 +110,6 @@ public class Launcher {
                     if (!command.equals("freq")){
                     System.out.println("Unknown command");}}
                 
-                System.out.println("Bienvenue");
                 command = scan.nextLine();}
 
         }
